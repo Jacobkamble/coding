@@ -259,5 +259,19 @@ export const selectionSort = (arr: number[]): number[] => {
   return arr;
 };
 
+export const findLongestWord = (sentence: string): string => {
+  const words = sentence.split(' ');
+  let longestWord = '';
+
+  for (const word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+
+  return longestWord;
+};
+
+
 // export const arr = [1, 5, 2, 1, 1, 2, 3, 3, 4, 3, 8, 5, 6, 7, -99, -4, 2];
 // Output: { '1': [ 'TCS', 'Infosys' ], '5': [ 'Wipro', 'HCL', 'Amazon' ] }"
