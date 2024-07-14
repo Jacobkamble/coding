@@ -272,6 +272,19 @@ export const findLongestWord = (sentence: string): string => {
   return longestWord;
 };
 
+export const generateFibonacci = (n: number): number[] => {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  const fibSequence: number[] = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+  }
+
+  return fibSequence;
+};
+
 
 // export const arr = [1, 5, 2, 1, 1, 2, 3, 3, 4, 3, 8, 5, 6, 7, -99, -4, 2];
 // Output: { '1': [ 'TCS', 'Infosys' ], '5': [ 'Wipro', 'HCL', 'Amazon' ] }"
