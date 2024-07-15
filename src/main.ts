@@ -285,6 +285,8 @@ export const generateFibonacci = (n: number): number[] => {
   return fibSequence;
 };
 
+export const mergeObjects = (obj1:{}, obj2:{}):{} => ({ ...obj1, ...obj2 });
+
 
 // export const arr = [1, 5, 2, 1, 1, 2, 3, 3, 4, 3, 8, 5, 6, 7, -99, -4, 2];
 // Output: { '1': [ 'TCS', 'Infosys' ], '5': [ 'Wipro', 'HCL', 'Amazon' ] }"
