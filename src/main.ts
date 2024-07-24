@@ -287,6 +287,18 @@ export const generateFibonacci = (n: number): number[] => {
 
 export const mergeObjects = (obj1:{}, obj2:{}):{} => ({ ...obj1, ...obj2 });
 
+export const countOccurrences = (substring: string, string: string): number => {
+  let count: number = 0;
+  let pos: number = string.indexOf(substring);
+
+  while (pos !== -1) {
+    count++;
+    pos = string.indexOf(substring, pos + 1);
+  }
+
+  return count;
+}
+
 
 // export const arr = [1, 5, 2, 1, 1, 2, 3, 3, 4, 3, 8, 5, 6, 7, -99, -4, 2];
 // Output: { '1': [ 'TCS', 'Infosys' ], '5': [ 'Wipro', 'HCL', 'Amazon' ] }"
