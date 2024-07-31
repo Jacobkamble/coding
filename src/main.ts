@@ -299,6 +299,15 @@ export const countOccurrences = (substring: string, string: string): number => {
   return count;
 }
 
+export function debounce(func:any, delay:any) {
+  let timer:any;
+  return function(...args:any) {
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+
 
 // export const arr = [1, 5, 2, 1, 1, 2, 3, 3, 4, 3, 8, 5, 6, 7, -99, -4, 2];
 // Output: { '1': [ 'TCS', 'Infosys' ], '5': [ 'Wipro', 'HCL', 'Amazon' ] }"
