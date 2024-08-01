@@ -307,6 +307,19 @@ export function debounce(func:any, delay:any) {
   };
 }
 
+export function throttle<T extends (...args: any[]) => void>(func: T, limit: number): (...args: Parameters<T>) => void {
+  let inThrottle: boolean;
+
+  return (...args: Parameters<T>): void => {
+    if (!inThrottle) {
+      func(...args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+}
+
+
 
 
 // export const arr = [1, 5, 2, 1, 1, 2, 3, 3, 4, 3, 8, 5, 6, 7, -99, -4, 2];
